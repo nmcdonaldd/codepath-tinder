@@ -21,14 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="Syb-Os-SEQ">
-                                <rect key="frame" x="16" y="82" width="343" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="FNk-Sd-9Tb" appends="YES" id="k85-ux-9ca"/>
-                                </connections>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-nN-qFa">
                                 <rect key="frame" x="62" y="447" width="250" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,6 +28,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="6qt-44-BR2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="Syb-Os-SEQ">
+                                <rect key="frame" x="27" y="92" width="323" height="323"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FNk-Sd-9Tb" appends="YES" id="k85-ux-9ca"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

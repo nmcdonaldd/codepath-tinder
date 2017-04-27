@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
-    var duration: TimeInterval = 0.25
+    var duration: TimeInterval = 0.15
     var isPresenting: Bool = true
     var isInteractive: Bool = false
     var transitionContext: UIViewControllerContextTransitioning!
@@ -40,7 +40,7 @@ class BaseTransition: NSObject, UIViewControllerTransitioningDelegate, UIViewCon
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         if isInteractive {
             interactiveTransition = UIPercentDrivenInteractiveTransition()
-            interactiveTransition.completionSpeed = 0.99
+            interactiveTransition.completionSpeed = 0.40
         } else {
             interactiveTransition = nil
         }

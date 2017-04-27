@@ -13,16 +13,19 @@ class ImageTransition: BaseTransition {
         guard let toViewController = toViewController as? ProfileViewController, let fromViewController = fromViewController as? CardsViewController else {
             return
         }
-        let imageViewFrame = toViewController.profileImageView.frame
-        let containerImageView = UIImageView(frame: imageViewFrame)
+        let currentVCViewFrame = fromViewController.cardImageView.frame
+        let imageToVCViewFrame = toViewController.profileImageView.frame
+        let containerImageView = UIImageView(frame: currentVCViewFrame)
         containerImageView.contentMode = .scaleAspectFit
         containerImageView.image = fromViewController.cardImageView.image
         containerView.addSubview(containerImageView)
-        
+        toViewController.profileImageView.alpha = 0.0
         toViewController.view.alpha = 0
         UIView.animate(withDuration: duration, animations: {
             toViewController.view.alpha = 1
+            containerImageView.frame = imageToVCViewFrame
         }) { (finished: Bool) -> Void in
+            toViewController.profileImageView.alpha = 1.0
             containerImageView.removeFromSuperview()
             self.finish()
         }
