@@ -13,6 +13,9 @@
 		D5A68A8A1EB15980007CF708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A68A891EB15980007CF708 /* Assets.xcassets */; };
 		D5A68A8D1EB15980007CF708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A68A8B1EB15980007CF708 /* LaunchScreen.storyboard */; };
 		D5AAD4B51EB16F1B00851E48 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAD4B41EB16F1B00851E48 /* ProfileViewController.swift */; };
+		D5AAD4B81EB17A6600851E48 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAD4B61EB17A6600851E48 /* BaseTransition.swift */; };
+		D5AAD4B91EB17A6600851E48 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAD4B71EB17A6600851E48 /* FadeTransition.swift */; };
+		D5AAD4BB1EB17AE700851E48 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAD4BA1EB17AE700851E48 /* ImageTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		D5A68A8C1EB15980007CF708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5A68A8E1EB15980007CF708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AAD4B41EB16F1B00851E48 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D5AAD4B61EB17A6600851E48 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		D5AAD4B71EB17A6600851E48 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		D5AAD4BA1EB17AE700851E48 /* ImageTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 		D5A68A811EB15980007CF708 /* codepath-tinder */ = {
 			isa = PBXGroup;
 			children = (
+				D5AAD4B61EB17A6600851E48 /* BaseTransition.swift */,
+				D5AAD4BA1EB17AE700851E48 /* ImageTransition.swift */,
+				D5AAD4B71EB17A6600851E48 /* FadeTransition.swift */,
 				D5A68A821EB15980007CF708 /* AppDelegate.swift */,
 				D5A68A841EB15980007CF708 /* CardsViewController.swift */,
 				D5AAD4B41EB16F1B00851E48 /* ProfileViewController.swift */,
@@ -141,7 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5AAD4B51EB16F1B00851E48 /* ProfileViewController.swift in Sources */,
+				D5AAD4B91EB17A6600851E48 /* FadeTransition.swift in Sources */,
+				D5AAD4B81EB17A6600851E48 /* BaseTransition.swift in Sources */,
 				D5A68A851EB15980007CF708 /* CardsViewController.swift in Sources */,
+				D5AAD4BB1EB17AE700851E48 /* ImageTransition.swift in Sources */,
 				D5A68A831EB15980007CF708 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,8 @@ class CardsViewController: UIViewController {
     private var cardInitialCenter: CGPoint!
     private var topDrag: Bool = true
     
+    var imageTransition: BaseTransition!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,10 +25,7 @@ class CardsViewController: UIViewController {
     }
     
     func toProfileViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileViewController.imageData = self.cardImageView.image
-        self.present(profileViewController, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "toProfileVC", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +75,24 @@ class CardsViewController: UIViewController {
         default:
             print("This shouldn't ever be printed!")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Access the ViewController that you will be transitioning too, a.k.a, the destinationViewController.
+        let destinationViewController = segue.destination as! ProfileViewController
+        destinationViewController.imageData = self.cardImageView.image
+        
+        // Set the modal presentation style of your destinationViewController to be custom.
+        destinationViewController.modalPresentationStyle = .custom
+        
+        // Create a new instance of your fadeTransition.
+        self.imageTransition = ImageTransition()
+        
+        // Tell the destinationViewController's  transitioning delegate to look in fadeTransition for transition instructions.
+        destinationViewController.transitioningDelegate = self.imageTransition
+        
+        // Adjust the transition duration. (seconds)
+        self.imageTransition.duration = 1.0
     }
 }
 
