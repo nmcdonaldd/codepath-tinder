@@ -19,6 +19,14 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toProfileViewController)))
+    }
+    
+    func toProfileViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileViewController.imageData = self.cardImageView.image
+        self.present(profileViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +55,14 @@ class CardsViewController: UIViewController {
         case .ended:
             let translation = sender.translation(in: self.view)
             let horizontalTranslation = translation.x
-            if abs(horizontalTranslation) >= 50 {
+            if abs(horizontalTranslation) >= 80 {
                 let newCenter = self.cardImageView.center
                 // This means it is moving to the left
                 var endFrame: CGRect
                 if newCenter.x > self.cardInitialCenter.x {
                     endFrame = CGRect(x: self.view.frame.maxX, y: self.cardImageView.frame.origin.y, width: self.cardImageView.frame.width, height: self.cardImageView.frame.height)
                 } else {
-                    endFrame = CGRect(x: self.view.frame.minX - self.cardImageView.frame.width - 100, y: self.cardImageView.frame.origin.y, width: self.cardImageView.frame.width, height: self.cardImageView.frame.height)
+                    endFrame = CGRect(x: self.view.frame.minX - self.cardImageView.frame.width, y: self.cardImageView.frame.origin.y, width: self.cardImageView.frame.width, height: self.cardImageView.frame.height)
                 }
                 UIView.animate(withDuration: 0.2, animations: {
                     self.cardImageView.frame = endFrame
@@ -69,6 +77,5 @@ class CardsViewController: UIViewController {
             print("This shouldn't ever be printed!")
         }
     }
-
 }
 
